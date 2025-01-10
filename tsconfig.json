@@ -8,6 +8,5 @@
     "module": "ESNext",
     "target": "ES6", 
     "outDir": "./dist"
-  },
-  "extends": "astro/tsconfigs/strict"
+  }
 }
