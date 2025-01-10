@@ -12,7 +12,8 @@ export function Plans({ currentLang }: PlansProps) {
     {
       name: 'Plan Básico',
       price: 500,
-      monthlyFee: billingType === 'monthly' ? 25 : 20,
+      monthlyFee: 25,
+      monthlyFeeAnual: 20,
       discount: 20,
       features: [
         'Mantenimiento básico',
@@ -23,7 +24,8 @@ export function Plans({ currentLang }: PlansProps) {
     {
       name: 'Plan Profesional',
       price: 500,
-      monthlyFee: billingType === 'monthly' ? 40 : 34,
+      monthlyFee: 40,
+      monthlyFeeAnual: 34,
       discount: 15,
       features: [
         '3 cambios al año incluidos',
@@ -34,7 +36,8 @@ export function Plans({ currentLang }: PlansProps) {
     {
       name: 'Plan Premium',
       price: 675,
-      monthlyFee: billingType === 'monthly' ? 50 : 40,
+      monthlyFee: 50,
+      monthlyFeeAnual: 40,
       discount: 20,
       features: [
         'Asistencia web IA',
@@ -95,12 +98,12 @@ export function Plans({ currentLang }: PlansProps) {
                   {billingType === 'annual' ? (
                     <>
                       <span className="line-through text-slate-500">
-                        +${plan.monthlyFee + (plan.monthlyFee * plan.discount / 100)}/mes
+                        ${plan.monthlyFee}/mes
                       </span>{' '}
-                      <span className="text-indigo-400">+${plan.monthlyFee}/mes</span>
+                      <span className="text-indigo-400">${plan.monthlyFeeAnual}/mes</span>
                     </>
                   ) : (
-                    <>+${plan.monthlyFee}/mes</>
+                    <>${plan.monthlyFee}/mes</>
                   )}
                 </div>
               </div>

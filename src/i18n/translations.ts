@@ -44,7 +44,7 @@ export const translations = {
       },
       seo: {
         title: 'SEO',
-        shortDesc: 'Optimizamos tu sitio para mejorar su visibilidad en los motores de búsqueda.',
+        shortDesc: 'Optimizamos tu sitio para mejorar la visibilidad en los motores de búsqueda.',
         description: 'Mejoramos tu posicionamiento en buscadores para aumentar el tráfico orgánico y la visibilidad de tu sitio.',
         features: {
           analytics: 'Análisis de Datos',
