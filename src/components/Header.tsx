@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Code2, Menu, X } from 'lucide-react';
-import { LanguageSelector } from './LanguageSelector';
+import { Code2 } from 'lucide-react';
 import { translations } from '../i18n/translations';
 
 interface HeaderProps {
@@ -10,28 +9,79 @@ interface HeaderProps {
 }
 
 export function Header({ currentLang, onLanguageChange }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
   const t = translations[currentLang as keyof typeof translations];
   const isHomePage = location.pathname === '/';
 
+  const onClickHandler = () => {
+    if (menuRef.current) {
+      menuRef.current.classList.toggle("hidden");
+      menuRef.current.classList.toggle("flex");
+    }
+  };
+
   return (
-    <header className="fixed w-full bg-slate-800/90 backdrop-blur-sm z-50 py-4 px-6 shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex-1">
-          {!isHomePage && (
-            <Link to="/" className="text-slate-300 hover:text-indigo-400">
-              {t.nav.home}
-            </Link>
-          )}
-        </div>
-        
+    <header className="fixed w-full bg-slate-800/90 backdrop-blur-sm z-50 py-4 px-6 shadow-sm" >
+      <div className="max-w-7xl mx-auto flex items-center justify-between transition-all">      
         <Link to={isHomePage ? '#' : '/'} className="flex items-center gap-2">
           <Code2 className="w-8 h-8 text-indigo-400" />
           <span className="font-bold text-xl text-white">Agency</span>
         </Link>
 
-        <div className="flex-1 flex items-center justify-end gap-4">
+        <div className="md:hidden">
+          <button onClick={onClickHandler}>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div ref={menuRef} className={"hidden fixed h-screen inset-0 w-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 z-[888] flex-col items-center overflow-x-auto gradient px-6 transition duration-300 ease-in-out"}>
+          <aside className="flex items-center justify-between w-full py-4">
+            <span className="text-xl font-semibold text-white">Menú</span>
+            <button onClick={onClickHandler} className="focus:outline-none">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+            </button>
+          </aside>
+          <nav className='flex w-full flex-col gap-5'>
+            <ul>
+              <li className='border-t-[1px] w-full py-6'>
+                <Link to="/" className="text-white rounded-lg hover:text-indigo-400 transition-colors text-md" onClick={onClickHandler}>
+                  {t.nav.home}
+                </Link>
+              </li>
+              
+              <li className='border-t-[1px] w-full py-6'>
+                <Link to="/plans" className="text-white rounded-lg hover:text-indigo-400 transition-colors text-md" onClick={onClickHandler}>
+                  {t.nav.plans}
+                </Link>
+              </li>
+            
+              <li className='border-t-[1px] w-full py-6'>
+                <Link to="/about" className="text-white rounded-lg hover:text-indigo-400 transition-colors text-md" onClick={onClickHandler}>
+                  {t.nav.about}
+                </Link>
+              </li>
+            
+              <li className='border-t-[1px] w-full py-6'>
+                <Link to="/blog" className="text-white rounded-lg hover:text-indigo-400 transition-colors text-md" onClick={onClickHandler}>
+                  {t.nav.blog}
+                </Link>
+              </li>
+            
+              <li className='border-y-[1px] w-full py-6'>
+                <Link to="/contact" className="text-white rounded-lg hover:text-indigo-400 transition-colors text-md" onClick={onClickHandler}>
+                  {t.nav.contact}
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="hidden md:flex flex-1 items-center justify-end gap-4">
           <select
             value={currentLang}
             onChange={(e) => onLanguageChange(e.target.value)}
@@ -47,35 +97,19 @@ export function Header({ currentLang, onLanguageChange }: HeaderProps) {
             {t.nav.plans}
           </Link>
 
-          <Link to="/contact" className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors">
-            {t.nav.contactButton}
+          <Link to="/about" className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors">
+            {t.nav.about}
           </Link>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white hover:text-indigo-400"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <Link to="/blog" className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors">
+            {t.nav.blog}
+          </Link>
+
+          <Link to="/contact" className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors">
+            {t.nav.contact}
+          </Link>
         </div>
       </div>
-
-      {/* Menú desplegable */}
-      {isMenuOpen && (
-        <div className="absolute top-full right-0 w-64 bg-slate-800/95 backdrop-blur-sm py-4 px-6 mr-6 rounded-lg shadow-lg">
-          <nav className="flex flex-col gap-4">
-            <Link to="/about" className="text-slate-300 hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
-              {t.nav.about}
-            </Link>
-            <Link to="/blog" className="text-slate-300 hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
-              {t.nav.blog}
-            </Link>
-            <Link to="/contact" className="text-slate-300 hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
-              {t.nav.contact}
-            </Link>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
