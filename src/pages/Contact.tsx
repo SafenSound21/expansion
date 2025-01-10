@@ -10,32 +10,57 @@ export function Contact({ currentLang }: ContactProps) {
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
   const t = translations[currentLang as keyof typeof translations];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!acceptedPrivacy) {
       alert('Por favor, acepta la política de privacidad para continuar.');
       return;
     }
-    // Handle form submission
+
+    const formData = new FormData(e?.target as HTMLFormElement);
+    const data: Record<string, string> = {};
+    console.log();
+    formData.forEach((value, key) => {
+      // Asegurarse de que el valor es un string antes de añadirlo al objeto
+      console.log(data, data[key])
+      if (typeof value === 'string') {
+        data[key] = value;
+      }
+    });
+
+    try {
+      // Hacer la solicitud POST a la ruta API
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      // Manejar la respuesta
+      if (response.ok) {
+        window.location.href = '/confirmation';
+      } else {
+        alert('Hubo un error al enviar el formulario');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error en la solicitud');
+    }
+
   };
 
   return (
     <section className="pt-28 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="px-6 max-w-2xl mx-auto">
         <div className="flex flex-col md:flex-row gap-12 mb-16">
-          <div className="w-full md:w-1/2 space-y-6">
+          <div className="w-full space-y-6">
             <h1 className="text-4xl font-bold text-white">{t.nav.contact}</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               Si tiene cualquier duda, no dude en contactar con nosotros. 
               Le responderemos lo antes posible para ayudarle con su proyecto.
             </p>
-          </div>
-          <div className="w-full md:w-1/2">
-            <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800"
-              alt="Contacto"
-              className="rounded-lg shadow-xl w-full"
-            />
           </div>
         </div>
 
@@ -45,6 +70,7 @@ export function Contact({ currentLang }: ContactProps) {
             <input
               type="text"
               id="name"
+              name="name"
               required
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
@@ -54,6 +80,7 @@ export function Contact({ currentLang }: ContactProps) {
             <input
               type="email"
               id="email"
+              name="email"
               required
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
@@ -62,6 +89,7 @@ export function Contact({ currentLang }: ContactProps) {
             <label htmlFor="business" className="block text-white mb-2">Negocio (opcional)</label>
             <input
               type="text"
+              name="business"
               id="business"
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
@@ -70,6 +98,7 @@ export function Contact({ currentLang }: ContactProps) {
             <label htmlFor="phone" className="block text-white mb-2">Teléfono (opcional)</label>
             <input
               type="tel"
+              name="phone"
               id="phone"
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
@@ -78,6 +107,7 @@ export function Contact({ currentLang }: ContactProps) {
             <label htmlFor="message" className="block text-white mb-2">Mensaje *</label>
             <textarea
               id="message"
+              name="message"
               required
               rows={5}
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"

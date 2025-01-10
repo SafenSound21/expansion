@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, Wallet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { translations } from '../i18n/translations';

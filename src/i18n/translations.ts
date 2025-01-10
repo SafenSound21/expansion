@@ -59,6 +59,11 @@ export const translations = {
     footer: {
       rights: '© 2024 Tu Agencia. Todos los derechos reservados.',
       contact: 'Contacto'
+    },
+    confirmation: {
+      message: '¡Gracias por contactarnos!',
+      detail: 'Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.',
+      backToHome: 'Volver al Inicio'
     }
   },
   en: {
@@ -121,6 +126,11 @@ export const translations = {
     footer: {
       rights: '© 2024 Your Agency. All rights reserved.',
       contact: 'Contact'
+    },
+    confirmation: {
+      message: 'Thank you for contacting us!',
+      detail: 'We have received your message and will get back to you as soon as possible.',
+      backToHome: 'Back to Home'
     }
   },
   fr: {
@@ -183,6 +193,11 @@ export const translations = {
     footer: {
       rights: '© 2024 Votre Agence. Tous droits réservés.',
       contact: 'Contact'
+    },
+    confirmation: {
+      message: 'Merci de nous avoir contactés !',
+      detail: 'Nous avons reçu votre message et nous vous contacterons dans les plus brefs délais.',
+      backToHome: 'Retour à l\'Accueil'
     }
   },
   de: {
@@ -245,6 +260,11 @@ export const translations = {
     footer: {
       rights: '© 2024 Ihre Agentur. Alle Rechte vorbehalten.',
       contact: 'Kontakt'
+    },
+    confirmation: {
+      message: 'Vielen Dank, dass Sie uns kontaktiert haben!',
+      detail: 'Wir haben Ihre Nachricht erhalten und werden uns so schnell wie möglich bei Ihnen melden.',
+      backToHome: 'Zurück zur Startseite'
     }
   }
 };

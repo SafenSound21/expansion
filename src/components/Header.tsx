@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Code2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { translations } from '../i18n/translations';
+import image from "../assets/images/image.png";
 
 interface HeaderProps {
   currentLang: string;
@@ -10,9 +10,7 @@ interface HeaderProps {
 
 export function Header({ currentLang, onLanguageChange }: HeaderProps) {
   const menuRef = useRef<HTMLDivElement | null>(null);
-  const location = useLocation();
   const t = translations[currentLang as keyof typeof translations];
-  const isHomePage = location.pathname === '/';
 
   const onClickHandler = () => {
     if (menuRef.current) {
@@ -24,9 +22,8 @@ export function Header({ currentLang, onLanguageChange }: HeaderProps) {
   return (
     <header className="fixed w-full bg-slate-800/90 backdrop-blur-sm z-50 py-4 px-6 shadow-sm" >
       <div className="max-w-7xl mx-auto flex items-center justify-between transition-all">      
-        <Link to={isHomePage ? '#' : '/'} className="flex items-center gap-2">
-          <Code2 className="w-8 h-8 text-indigo-400" />
-          <span className="font-bold text-xl text-white">Agency</span>
+        <Link to={'/'} className="flex items-center gap-2">
+          <img src={image} alt="expansion digital logo" width="200px" />
         </Link>
 
         <div className="md:hidden">

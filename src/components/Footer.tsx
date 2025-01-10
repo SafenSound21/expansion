@@ -1,8 +1,8 @@
-import React from 'react';
 import { Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Code2 } from 'lucide-react';
 import { translations } from '../i18n/translations';
+import image from "../assets/images/image.png";
+
 
 interface FooterProps {
   currentLang: string;
@@ -37,11 +37,10 @@ export function Footer({ currentLang }: FooterProps) {
           </div>
 
           {/* Logo en el centro */}
-          <div className="flex justify-center">
-            <Link to="/" className="flex items-center gap-2">
-              <Code2 className="w-8 h-8 text-indigo-400" />
-              <span className="font-bold text-xl">Agency</span>
-            </Link>
+          <div className="flex justify-start">
+          <Link to={'/'} className="flex items-center gap-2">
+            <img src={image} alt="expansion digital logo" width="200px" />
+          </Link>
           </div>
 
           {/* Contacto a la derecha */}
@@ -50,13 +49,6 @@ export function Footer({ currentLang }: FooterProps) {
             <div className="flex items-center gap-2 text-slate-300">
               <Mail className="w-4 h-4" />
               info@expansion-digital.com
-            </div>
-            <div className="relative">
-              <input
-                type="email"
-                placeholder="Introduzca su correo"
-                className="w-full px-4 py-2 bg-slate-700/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
             </div>
           </div>
         </div>
