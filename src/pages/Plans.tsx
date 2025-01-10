@@ -18,6 +18,7 @@ export function Plans({ currentLang }: PlansProps) {
         'Mantenimiento básico',
         'Cambios: 200$ por cambio',
       ],
+      link: "https://buy.stripe.com/00gdRf5nx2a27vieUU"
     },
     {
       name: 'Plan Profesional',
@@ -28,6 +29,7 @@ export function Plans({ currentLang }: PlansProps) {
         '3 cambios al año incluidos',
         'Mantenimiento avanzado',
       ],
+      link: "https://buy.stripe.com/bIYbJ7dU38yqeXK5kl"
     },
     {
       name: 'Plan Premium',
@@ -39,6 +41,7 @@ export function Plans({ currentLang }: PlansProps) {
         '4 cambios mensuales incluidos',
         'Mantenimiento premium',
       ],
+      link: "https://buy.stripe.com/5kAbJ717heWO16UcMO"
     },
   ];
 
@@ -109,9 +112,9 @@ export function Plans({ currentLang }: PlansProps) {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+              <a target="_blank" href={plan.link} className="text-center w-full bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
                 Contratar Plan
-              </button>
+              </a>
             </div>
           ))}
         </div>
