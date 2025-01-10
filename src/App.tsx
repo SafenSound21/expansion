@@ -27,8 +27,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home currentLang={currentLang} />} />
-          <Route path="/contact" element={<Contact currentLang={currentLang} />} />
           <Route path="/confirmation" element={<Confirmation currentLang={currentLang} />} />
+          <Route path="/contact" element={<Contact currentLang={currentLang} />} />
           <Route path="/plans" element={<Plans currentLang={currentLang} />} />
           <Route path="/about" element={<About currentLang={currentLang} />} />
           <Route path="/blog" element={<Blog currentLang={currentLang} />} />
