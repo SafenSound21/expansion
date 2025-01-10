@@ -14,7 +14,7 @@ import { Legal } from './pages/legal/Legal';
 import { WebDesign } from './pages/services/WebDesign';
 import { WebDevelopment } from './pages/services/WebDevelopment';
 import { SEO } from './pages/services/SEO';
-import { Confirmation } from './pages/confirmation';
+import { Confirmation } from "./pages/Confirmation";
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
