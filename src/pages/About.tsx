@@ -15,10 +15,10 @@ export function About({ currentLang }: AboutProps) {
             <h1 className="text-4xl font-bold text-white">{t.nav.about}</h1>
             <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
               <p>
-                Empresa dedicada a digitalizar comercios en Costa Rica y en Panamá, para ayudarles a ganar más visibilidad en los turistas, para que partan de una ventaja inicial importante respecto a sus competidores.
+              Empresa dedicada a digitalizar comercios mediante el desarrollo web en Costa Rica y en Panamá, para aumentar la visibilidad de sus comercios en los turistas, para que partan de una ventaja inicial importante respecto a sus competidores.
               </p>
               <p>
-                Con experiencia en el mundo de la creación de Apps, nos hemos pasado al sector web ya que identificamos una gran oportunidad para ayudar a comercios locales de Costa Rica.
+                Con experiencia en el mundo de la creación de Apps, nos hemos pasado al sector web ya que identificamos una gran oportunidad para ayudar a comercios locales de Costa Rica y Panamá.
               </p>
             </div>
           </div>

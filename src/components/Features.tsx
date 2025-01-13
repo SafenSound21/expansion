@@ -1,5 +1,3 @@
-import React from 'react';
-import { Globe, Target, Clock } from 'lucide-react';
 
 interface FeaturesProps {
   currentLang: string;
@@ -31,7 +29,7 @@ export function Features({ currentLang }: FeaturesProps) {
         {/* Segunda sección */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 mb-24">
           <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-3xl font-bold text-white">Justo lo que necesitas</h2>
+            <h2 className="text-3xl font-bold text-white">Hecho a tu medida</h2>
             <p className="text-slate-300 text-lg leading-relaxed">
               Hemos identificado la vital importancia del sector turístico para los negocios en Costa Rica y Panamá. 
               Nuestro análisis detallado de cada nicho nos permite crear estrategias personalizadas que aseguran que 
@@ -57,7 +55,7 @@ export function Features({ currentLang }: FeaturesProps) {
             />
           </div>
           <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-3xl font-bold text-white">¿Cómo lo hacemos?</h2>
+            <h2 className="text-3xl font-bold text-white">Paso a paso</h2>
             <p className="text-slate-300 text-lg leading-relaxed">
               Nuestro proceso comienza con una recopilación detallada de información sobre su negocio, incluyendo fotos 
               y detalles específicos. Dedicamos entre 2 y 6 semanas a analizar su situación y desarrollar una estrategia 

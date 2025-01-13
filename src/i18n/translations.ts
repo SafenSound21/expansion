@@ -5,13 +5,13 @@ export const translations = {
       services: 'Servicios',
       about: 'Sobre Nosotros',
       blog: 'Blog',
-      contact: 'Contáctanos',
+      contact: 'Ponte en contacto',
       contactButton: 'Contactar',
       plans: 'Planes'
     },
     hero: {
-      title: 'Tu puerta a una mayor visibilidad y éxito digital en Costa Rica y Panamá',
-      description: 'Especialistas en diseño web, desarrollo, SEO, marketing digital y branding para impulsar tu presencia online.',
+      title: 'Diseñamos su página web para potenciar la visibilidad de tu negocio.',
+      description: 'Especialistas en diseño web, desarrollo y SEO para impulsar tu presencia online',
       cta: 'Agendar una reunión'
     },
     services: {
@@ -77,8 +77,8 @@ export const translations = {
       plans: 'Plans'
     },
     hero: {
-      title: 'Your gateway to greater visibility and digital success in Costa Rica and Panama',
-      description: 'Specialists in web design, development, SEO, digital marketing, and branding to boost your online presence.',
+      title: 'We design your website to boost your business visibility and make you stand out',
+      description: 'Specialists in web design, development, and SEO to boost your online presence.',
       cta: 'Schedule a Meeting'
     },
     services: {
@@ -144,8 +144,8 @@ export const translations = {
       plans: 'Forfaits'
     },
     hero: {
-      title: 'Votre porte d\'entrée vers une plus grande visibilité et un succès numérique au Costa Rica et au Panama',
-      description: 'Spécialistes en conception web, développement, SEO, marketing digital et image de marque pour booster votre présence en ligne.',
+      title: 'Nous créons votre site web pour booster la visibilité de votre entreprise et vous démarquer.',
+      description: 'Spécialistes en conception web, développement et SEO pour booster votre présence en ligne.',
       cta: 'Planifier une Réunion'
     },
     services: {
@@ -211,8 +211,8 @@ export const translations = {
       plans: 'Pläne'
     },
     hero: {
-      title: 'Ihr Tor zu mehr Sichtbarkeit und digitalem Erfolg in Costa Rica und Panama',
-      description: 'Spezialisten für Webdesign, Entwicklung, SEO, digitales Marketing und Branding zur Steigerung Ihrer Online-Präsenz.',
+      title: 'Wir gestalten Ihre Website, um die Sichtbarkeit Ihres Unternehmens zu steigern und Sie hervorzuheben.',
+      description: 'Spezialisten für Webdesign, Entwicklung und SEO zur Steigerung Ihrer Online-Präsenz.',
       cta: 'Meeting Planen'
     },
     services: {
