@@ -10,14 +10,14 @@ export function Hero({ currentLang }: HeroProps) {
   const t = translations[currentLang as keyof typeof translations];
 
   return (
-    <section className="relative h-screen w-full">
+    <section className="relative min-h-screen w-full">
       {/* Imagen de fondo */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80 bg-hero-image"></div>
 
       {/* Gradiente superpuesto */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 opacity-50"></div>
 
-      <div className="relative z-10 pt-52 pb-32">
+      <div className="relative z-10 pt-40 md:pt-52 pb-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
