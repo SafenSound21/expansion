@@ -12,12 +12,12 @@ export function Hero({ currentLang }: HeroProps) {
   return (
     <section className="relative min-h-screen w-full">
       {/* Imagen de fondo */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80 bg-hero-image"></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80 bg-hero-image h-full"></div>
 
       {/* Gradiente superpuesto */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 opacity-50 h-full"></div>
 
-      <div className="relative z-10 pt-40 md:pt-52 pb-32">
+      <div className="relative z-10 pt-36 md:pt-52 pb-20 md:pb-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
@@ -26,7 +26,7 @@ export function Hero({ currentLang }: HeroProps) {
             <p className="text-2xl text-slate-200 leading-relaxed max-w-3xl">
               {t.hero.description}
             </p>
-            <div className="flex gap-4 w-full max-w-xl">
+            <div className="flex gap-4 w-full max-w-xl flex-wrap">
               <Link 
                 to="/plans"
                 className="flex-1 flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-lg"

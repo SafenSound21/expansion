@@ -10,7 +10,7 @@ export const translations = {
       plans: 'Planes'
     },
     hero: {
-      title: 'Diseñamos su página web para potenciar la visibilidad de tu negocio.',
+      title: 'Diseñamos su página web para potenciar la visibilidad de tu negocio',
       description: 'Especialistas en diseño web, desarrollo y SEO para impulsar tu presencia online',
       cta: 'Agendar una reunión'
     },
@@ -144,7 +144,7 @@ export const translations = {
       plans: 'Forfaits'
     },
     hero: {
-      title: 'Nous créons votre site web pour booster la visibilité de votre entreprise et vous démarquer.',
+      title: 'Nous créons votre site web pour booster la visibilité de votre entreprise et vous démarquer',
       description: 'Spécialistes en conception web, développement et SEO pour booster votre présence en ligne.',
       cta: 'Planifier une Réunion'
     },
@@ -211,7 +211,7 @@ export const translations = {
       plans: 'Pläne'
     },
     hero: {
-      title: 'Wir gestalten Ihre Website, um die Sichtbarkeit Ihres Unternehmens zu steigern und Sie hervorzuheben.',
+      title: 'Wir gestalten Ihre Website, um die Sichtbarkeit Ihres Unternehmens zu steigern und Sie hervorzuheben',
       description: 'Spezialisten für Webdesign, Entwicklung und SEO zur Steigerung Ihrer Online-Präsenz.',
       cta: 'Meeting Planen'
     },
