@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -15,10 +15,16 @@ import { WebDesign } from './pages/services/WebDesign';
 import { WebDevelopment } from './pages/services/WebDevelopment';
 import { SEO } from './pages/services/SEO';
 import { Confirmation } from "./pages/Confirmation";
+import initFacebookPixel from './tracking/Facebook';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [currentLang, setCurrentLang] = useState('es');
+
+  useEffect(() => {
+    const pixelId = '920737726841208';
+    initFacebookPixel(pixelId);
+  }, []);
 
   return (
     <Router>
