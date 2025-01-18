@@ -16,14 +16,17 @@ import { WebDevelopment } from './pages/services/WebDevelopment';
 import { SEO } from './pages/services/SEO';
 import { Confirmation } from "./pages/Confirmation";
 import initFacebookPixel from './tracking/Facebook';
+import TagManager from 'react-gtm-module';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [currentLang, setCurrentLang] = useState('es');
 
   useEffect(() => {
-    const pixelId = '920737726841208';
+    const pixelId = import.meta.env.VITE_PIXEL_ID || "";
+    const gtmId = import.meta.env.VITE_GTM_ID || "";
     initFacebookPixel(pixelId);
+    TagManager.initialize({ gtmId: gtmId });
   }, []);
 
   return (
