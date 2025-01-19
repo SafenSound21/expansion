@@ -8,7 +8,7 @@ export function WhatsappButton() {
       href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 bg-green-500 rounded-full shadow-xl hover:bg-green-600 focus:ring-4 focus:ring-green-300 flex items-center justify-center transition-transform transform hover:scale-110"
+      className="fixed z-50 bottom-6 right-6 bg-green-500 rounded-full shadow-xl hover:bg-green-600 focus:ring-4 focus:ring-green-300 flex items-center justify-center transition-transform transform hover:scale-110"
       aria-label="WhatsApp"
     >
       <svg
