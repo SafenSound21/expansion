@@ -15,6 +15,7 @@ import { WebDesign } from './pages/services/WebDesign';
 import { WebDevelopment } from './pages/services/WebDevelopment';
 import { SEO } from './pages/services/SEO';
 import { Confirmation } from "./pages/Confirmation";
+import { WhatsappButton } from "./components/WhatsappButton";
 import initFacebookPixel from './tracking/Facebook';
 import TagManager from 'react-gtm-module';
 import ScrollToTop from './components/ScrollToTop';
@@ -50,6 +51,7 @@ function App() {
           <Route path="/services/seo" element={<SEO currentLang={currentLang} />} />
         </Routes>
         <Footer currentLang={currentLang} onLanguageChange={setCurrentLang} />
+        <WhatsappButton />
       </div>
     </Router>
   );
