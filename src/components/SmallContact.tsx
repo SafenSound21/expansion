@@ -7,6 +7,10 @@ export function SmallContact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!acceptedPrivacy) {
+      alert('Por favor, acepta la política de privacidad para continuar.');
+      return;
+    }
 
     const formData = new FormData(e?.target as HTMLFormElement);
     const data: Record<string, string> = {};
@@ -32,7 +36,6 @@ export function SmallContact() {
       if (response.ok) {
         window.location.href = '/confirmation';
       } else {
-        console.log(response);
         alert('Hubo un error al enviar el formulario');
       }
     } catch (error) {

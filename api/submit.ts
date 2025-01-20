@@ -8,7 +8,7 @@ export default async function handler(request: VercelRequest, res: VercelRespons
     if (request.method === "POST") {
 
       const formData = await request.body;
-      const { name, email, message, business, phone } = formData;
+      const { name = 'No proporcionado', email, message, business = 'No proporcionado', phone = 'No proporcionado' } = formData;
 
       await resend.emails.send({
         from: "Expansion <info@expansion-digital.com>",
