@@ -20,6 +20,8 @@ import initFacebookPixel from './tracking/Facebook';
 import TagManager from 'react-gtm-module';
 import ScrollToTop from './components/ScrollToTop';
 
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   const [currentLang, setCurrentLang] = useState('es');
 
@@ -53,6 +55,7 @@ function App() {
         <Footer currentLang={currentLang} onLanguageChange={setCurrentLang} />
         <WhatsappButton />
       </div>
+      <Analytics />
     </Router>
   );
 }
