@@ -1,4 +1,4 @@
-import { Calendar, Wallet } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { translations } from '../i18n/translations';
 
@@ -27,13 +27,6 @@ export function Hero({ currentLang }: HeroProps) {
               {t.hero.description}
             </p>
             <div className="flex gap-4 w-full max-w-xl flex-wrap">
-              <Link 
-                to="/plans"
-                className="flex-1 flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-lg"
-              >
-                <Wallet className="w-6 h-6" />
-                {t.nav.plans}
-              </Link>
               <Link 
                 to="/contact"
                 className="flex-1 flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-lg"

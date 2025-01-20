@@ -19,10 +19,8 @@ export function Contact({ currentLang }: ContactProps) {
 
     const formData = new FormData(e?.target as HTMLFormElement);
     const data: Record<string, string> = {};
-    console.log();
     formData.forEach((value, key) => {
       // Asegurarse de que el valor es un string antes de añadirlo al objeto
-      console.log(data, data[key])
       if (typeof value === 'string') {
         data[key] = value;
       }
@@ -58,8 +56,7 @@ export function Contact({ currentLang }: ContactProps) {
           <div className="w-full space-y-6">
             <h1 className="text-4xl font-bold text-white">{t.nav.contact}</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
-              Si tiene cualquier duda, no dude en contactar con nosotros. 
-              Le responderemos lo antes posible para ayudarle con su proyecto.
+              ¿Listo para dar el siguiente paso? Completa el formulario y nuestro equipo se pondrá en contacto contigo lo antes posible.
             </p>
           </div>
         </div>
@@ -86,7 +83,7 @@ export function Contact({ currentLang }: ContactProps) {
             />
           </div>
           <div>
-            <label htmlFor="business" className="block text-white mb-2">Negocio (opcional)</label>
+            <label htmlFor="business" className="block text-white mb-2">Nombre del negocio (opcional)</label>
             <input
               type="text"
               name="business"

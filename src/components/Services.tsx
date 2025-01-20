@@ -1,4 +1,3 @@
-import React from 'react';
 import { Palette, Code2, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { translations } from '../i18n/translations';
@@ -47,7 +46,10 @@ export function Services({ currentLang }: ServicesProps) {
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                <p className="text-slate-300">{service.description}</p>
+                <p className="text-slate-300 mb-6">{service.description}</p>
+                <span className="inline-flex items-center text-indigo-400 font-medium">
+                  Ver más detalles
+                </span>
               </div>
             </Link>
           ))}

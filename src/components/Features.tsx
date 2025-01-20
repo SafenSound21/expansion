@@ -1,12 +1,22 @@
 
-interface FeaturesProps {
-  currentLang: string;
-}
+// interface FeaturesProps {
+//   currentLang: string;
+// }
 
-export function Features({ currentLang }: FeaturesProps) {
+export function Features() {
   return (
     <section className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-6">
+
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            ¿Qué Hace que Trabajar con Nosotros Sea Diferente?
+          </h2>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Nos especializamos en crear páginas web que impulsan el crecimiento de tu negocio
+          </p>
+        </div>
+
         {/* Primera sección */}
         <div className="flex flex-col md:flex-row items-center gap-12 mb-24">
           <div className="w-full md:w-1/2">
@@ -55,11 +65,10 @@ export function Features({ currentLang }: FeaturesProps) {
             />
           </div>
           <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-3xl font-bold text-white">Paso a paso</h2>
+            <h2 className="text-3xl font-bold text-white">Informes Mensuales Detallados</h2>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Nuestro proceso comienza con una recopilación detallada de información sobre su negocio, incluyendo fotos 
-              y detalles específicos. Dedicamos entre 2 y 6 semanas a analizar su situación y desarrollar una estrategia 
-              digital personalizada que maximice su visibilidad online y atraiga a los viajeros adecuados.
+              Recibirás informes mensuales completos sobre el rendimiento de tu web: 
+              visitas, tiempo de permanencia, comportamiento de los usuarios y mucho más. Te mostraremos cómo tu inversión está generando resultados reales y contribuyendo al crecimiento de tu negocio mes a mes.
             </p>
           </div>
         </div>

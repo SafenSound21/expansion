@@ -50,12 +50,6 @@ export function Header({ currentLang, onLanguageChange }: HeaderProps) {
                   {t.nav.home}
                 </Link>
               </li>
-              
-              <li className='border-t-[1px] w-full py-6'>
-                <Link to="/plans" className="text-white rounded-lg hover:text-indigo-400 transition-colors text-md" onClick={onClickHandler}>
-                  {t.nav.plans}
-                </Link>
-              </li>
             
               <li className='border-t-[1px] w-full py-6'>
                 <Link to="/about" className="text-white rounded-lg hover:text-indigo-400 transition-colors text-md" onClick={onClickHandler}>
@@ -89,10 +83,6 @@ export function Header({ currentLang, onLanguageChange }: HeaderProps) {
             <option value="fr">FR</option>
             <option value="de">DE</option>
           </select>
-
-          <Link to="/plans" className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors">
-            {t.nav.plans}
-          </Link>
 
           <Link to="/about" className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors">
             {t.nav.about}

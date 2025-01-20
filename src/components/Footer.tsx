@@ -13,43 +13,51 @@ export function Footer({ currentLang }: FooterProps) {
   const t = translations[currentLang as keyof typeof translations];
 
   return (
-    <footer className="bg-slate-800/50 text-white py-8">
+    <footer className="bg-slate-900 text-white py-10 border-t">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Links a la izquierda */}
-          <div className="space-y-3">
-            <h3 className="font-semibold text-white mb-4">Información</h3>
-            <Link to="/about" className="block text-slate-300 hover:text-indigo-400">
+        {/* Logo y enlaces */}
+        <div className="flex flex-col md:flex-row items-center md:justify-between gap-8">
+          {/* Logo */}
+          <div className="text-center md:text-left">
+            <Link to={'/'} className="inline-block">
+              <img src={image} alt="Expansion Digital logo" width="180px" className="mx-auto md:mx-0" />
+            </Link>
+          </div>
+
+          {/* Enlaces */}
+          <div className="flex flex-col md:flex-row md:items-center md:gap-6 text-center md:text-left">
+            <Link to="/about" className="text-slate-300 hover:text-indigo-400 mb-2 md:mb-0">
               {t.nav.about}
             </Link>
-            <Link to="/privacy-policy" className="block text-slate-300 hover:text-indigo-400">
+            <Link to="/privacy-policy" className="text-slate-300 hover:text-indigo-400 mb-2 md:mb-0">
               Política de Privacidad
             </Link>
-            <Link to="/cookies-policy" className="block text-slate-300 hover:text-indigo-400">
+            <Link to="/cookies-policy" className="text-slate-300 hover:text-indigo-400 mb-2 md:mb-0">
               Política de Cookies
             </Link>
-            <Link to="/terms" className="block text-slate-300 hover:text-indigo-400">
+            <Link to="/terms" className="text-slate-300 hover:text-indigo-400 mb-2 md:mb-0">
               Términos y Condiciones
             </Link>
-            <Link to="/legal" className="block text-slate-300 hover:text-indigo-400">
+            <Link to="/legal" className="text-slate-300 hover:text-indigo-400 mb-2 md:mb-0">
               Aviso Legal
             </Link>
           </div>
+        </div>
 
-          {/* Logo en el centro */}
-          <div className="flex justify-start">
-          <Link to={'/'} className="flex items-center gap-2">
-            <img src={image} alt="expansion digital logo" width="200px" />
-          </Link>
-          </div>
+        {/* Línea divisora */}
+        <hr className="my-8 border-slate-700" />
 
-          {/* Contacto a la derecha */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">{t.footer.contact}</h3>
-            <div className="flex items-center gap-2 text-slate-300">
-              <Mail className="w-4 h-4" />
-              info@expansion-digital.com
-            </div>
+        {/* Copyright y redes sociales */}
+        <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-4">
+          <p className="text-slate-400 text-sm">
+            © {new Date().getFullYear()} Expansion Digital. Todos los derechos reservados.
+          </p>
+          <div className="flex gap-4">
+            <a href="mailto:info@expansion-digital.com" className="text-slate-300 hover:text-indigo-400">
+              <Mail size={20} />
+            </a>
+            <a href="#" className="text-slate-300 hover:text-indigo-400">
+            </a>
           </div>
         </div>
       </div>
