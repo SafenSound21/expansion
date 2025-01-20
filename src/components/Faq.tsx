@@ -91,7 +91,7 @@ export function Faq() {
                 
                 <div
                   className={`
-                    overflow-hidden transition-all duration-300 ease-in-out
+                    overflow-hidden md:transition-all md:duration-300 md:ease-in-out
                     ${openIndex === index ? 'max-h-96' : 'max-h-0'}
                   `}
                 >
