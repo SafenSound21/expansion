@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { Send } from 'lucide-react';
 
 export function SmallContact() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -62,9 +60,8 @@ export function SmallContact() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg opacity-30 group-hover:opacity-100 transition duration-500"></div>
             <input
               type="email"
-              value={email}
               id="email"
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
               placeholder="Tu email"
               required
               className="relative w-full px-6 py-4 bg-slate-900/90 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -74,8 +71,7 @@ export function SmallContact() {
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg opacity-30 group-hover:opacity-100 transition duration-500"></div>
             <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              name="message"
               placeholder="Tu mensaje"
               id="message"
               required
