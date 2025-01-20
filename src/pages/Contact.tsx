@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import ReactPixel from "react-facebook-pixel";
+
 import { Link } from 'react-router-dom';
 import { translations } from '../i18n/translations';
 
@@ -9,6 +12,18 @@ interface ContactProps {
 export function Contact({ currentLang }: ContactProps) {
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
   const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+    
+    const viewContentTracked = sessionStorage.getItem("ContactViewContentTracked");
+    if (!viewContentTracked) {
+      ReactPixel.track("ViewContent", {
+        content_name: 'Ponte en contacto',
+      });
+      sessionStorage.setItem("ContactViewContentTracked", "true");
+    }
+
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,6 +53,10 @@ export function Contact({ currentLang }: ContactProps) {
 
       // Manejar la respuesta
       if (response.ok) {
+        ReactPixel.track('Lead', {
+          form_name: "Formulario de contacto",
+          page_origin: "Contact Page"
+        });
         window.location.href = '/confirmation';
       } else {
         alert('Hubo un error al enviar el formulario');

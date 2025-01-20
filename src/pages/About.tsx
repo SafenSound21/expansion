@@ -1,5 +1,8 @@
 // import { translations } from '../i18n/translations';
 
+import ReactPixel from "react-facebook-pixel";
+
+import { useEffect } from "react";
 import { SmallContact } from "../components/SmallContact";
 
 // interface AboutProps {
@@ -8,6 +11,18 @@ import { SmallContact } from "../components/SmallContact";
 
 export function About() {
   // const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+    const viewContentTracked = sessionStorage.getItem("AboutViewContentTracked");
+    if (!viewContentTracked) {
+
+      ReactPixel.track("ViewContent", {
+        content_name: 'Sobre Nosotros',
+      });
+      
+      sessionStorage.setItem("AboutViewContentTracked", "true");
+    }
+  }, []);
 
   return (
     <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900">

@@ -1,5 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import ReactPixel from "react-facebook-pixel";
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+
 import { translations } from '../i18n/translations';
 import { SmallContact } from '../components/SmallContact';
 
@@ -20,6 +23,16 @@ export function Blog({ currentLang }: BlogProps) {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+    const viewContentTracked = sessionStorage.getItem("BlogViewContentTracked");
+    if (!viewContentTracked) {
+      ReactPixel.track("ViewContent", {
+        content_name: 'Blog',
+      });
+      sessionStorage.setItem("BlogViewContentTracked", "true")
+    }
+  }, []);
 
   const blogPosts: BlogPost[] = [
     {

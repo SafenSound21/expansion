@@ -1,5 +1,6 @@
 import { Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ReactPixel from 'react-facebook-pixel';
 import { translations } from '../i18n/translations';
 
 interface HeroProps {
@@ -8,6 +9,14 @@ interface HeroProps {
 
 export function Hero({ currentLang }: HeroProps) {
   const t = translations[currentLang as keyof typeof translations];
+
+  const handleLinkClick = () => {
+    const buttonClicked = sessionStorage.getItem(`ButtonContactHeroClicked`);
+    if (!buttonClicked) {
+      ReactPixel.track('clickContactHero');
+      sessionStorage.setItem("ButtonContactHeroClicked", "true");
+    }
+  };
 
   return (
     <section className="relative min-h-screen w-full">
@@ -28,6 +37,7 @@ export function Hero({ currentLang }: HeroProps) {
             </p>
             <div className="flex gap-4 w-full max-w-xl flex-wrap">
               <Link 
+                onClick={handleLinkClick}
                 to="/contact"
                 className="flex-1 flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-lg"
               >

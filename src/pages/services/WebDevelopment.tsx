@@ -1,4 +1,5 @@
-import React from 'react';
+import { useEffect } from 'react';
+import ReactPixel from "react-facebook-pixel";
 import { Code2, Cpu, Shield, Zap, Database, Cloud, GitBranch } from 'lucide-react';
 import { translations } from '../../i18n/translations';
 import { Link } from 'react-router-dom';
@@ -9,6 +10,23 @@ interface WebDevelopmentProps {
 
 export function WebDevelopment({ currentLang }: WebDevelopmentProps) {
   const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+
+    const viewContentTracked = sessionStorage.getItem("WebDevViewContentTracked");
+    
+    if (!viewContentTracked) {
+      ReactPixel.track("ViewContent", {
+        content_name: 'Web development page',
+      });
+      sessionStorage.setItem("WebDevViewContentTracked", "true");
+    }
+
+  }, []);
+
+  const handleLinkClick = () => {
+    ReactPixel.track('clickWebDevelopmentStartNow');
+  };
 
   return (
     <section className="pt-28 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900">
@@ -80,6 +98,7 @@ export function WebDevelopment({ currentLang }: WebDevelopmentProps) {
 
         <div className="text-center">
           <Link
+            onClick={handleLinkClick}
             to="/contact"
             className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-lg"
           >

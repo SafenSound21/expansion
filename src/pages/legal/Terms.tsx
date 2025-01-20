@@ -1,6 +1,21 @@
-import React from 'react';
+import { useEffect } from "react";
+
+import ReactPixel from "react-facebook-pixel";
 
 export function Terms() {
+
+  useEffect(() => {
+    const viewContentTracked = sessionStorage.getItem("TermsViewContentTracked");
+    
+    if (!viewContentTracked) {
+      ReactPixel.track("ViewContent", {
+        content_name: 'terms page',
+      });
+      sessionStorage.setItem("TermsViewContentTracked", "true");
+    }
+
+  }, []);
+
   return (
     <section className="pt-28 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900">
       <div className="max-w-4xl mx-auto px-6">

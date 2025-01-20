@@ -1,4 +1,7 @@
-import React from 'react';
+import { useEffect } from 'react';
+
+import ReactPixel from "react-facebook-pixel";
+
 import { Search, BarChart2, Globe, Target, TrendingUp, LineChart, Settings } from 'lucide-react';
 import { translations } from '../../i18n/translations';
 import { Link } from 'react-router-dom';
@@ -9,6 +12,22 @@ interface SEOProps {
 
 export function SEO({ currentLang }: SEOProps) {
   const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+    const viewContentTracked = sessionStorage.getItem("SeoViewContentTracked");
+    
+    if (!viewContentTracked) {
+      ReactPixel.track("ViewContent", {
+        content_name: 'Seo page',
+      });
+      sessionStorage.setItem("SeoViewContentTracked", "true");
+    }
+
+  }, []);
+
+  const handleLinkClick = () => {
+    ReactPixel.track('clickSeoStartNow');
+  };
 
   return (
     <section className="pt-28 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900">
@@ -80,6 +99,7 @@ export function SEO({ currentLang }: SEOProps) {
 
         <div className="text-center">
           <Link
+            onClick={handleLinkClick}
             to="/contact"
             className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 transition-colors text-lg"
           >

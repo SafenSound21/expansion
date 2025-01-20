@@ -1,10 +1,20 @@
+import ReactPixel from "react-facebook-pixel";
 
 export function WhatsappButton() {
   const phoneNumber = import.meta.env.VITE_WS_NUMBER || "";
   const message = "¡Hola! Estoy interesado en más información.";
+
+  const handleClick = () => {
+    const buttonClicked = sessionStorage.getItem(`ButtonWSClicked`);
+    if (!buttonClicked) {
+      ReactPixel.track('clickWS');
+      sessionStorage.setItem("ButtonWSClicked", "true");
+    };
+  }
   
   return (
     <a
+      onClick={handleClick}
       href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"

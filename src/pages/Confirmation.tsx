@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+
+import ReactPixel from "react-facebook-pixel";
+
 import { translations } from '../i18n/translations';
 
 interface ConfirmationProps {
@@ -7,6 +11,19 @@ interface ConfirmationProps {
 export function Confirmation({ currentLang }: ConfirmationProps) {
 
   const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+    const viewContentTracked = sessionStorage.getItem("ConfirmationViewContentTracked");
+    if (!viewContentTracked) {
+
+      ReactPixel.track("ViewContent", {
+        content_name: 'Confirmation Page',
+      });
+      
+      sessionStorage.setItem("ConfirmationViewContentTracked", "true");
+
+    }
+  }, []);
 
   return (
     <main className="pt-40 pb-32 flex flex-col items-center justify-center">

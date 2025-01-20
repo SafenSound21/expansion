@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
+import ReactPixel from 'react-facebook-pixel';
 
 export function StartNow() {
   
+  const handleLinkClick = () => {
+    const buttonClicked = sessionStorage.getItem(`ButtonStartNowClicked`);
+    if (!buttonClicked) {
+      ReactPixel.track('clickStartNow');
+      sessionStorage.setItem("ButtonStartNowClicked", "true");
+    };
+  }
 
   return (
 
@@ -14,7 +22,11 @@ export function StartNow() {
           No esperes más para tener la página web que tu negocio merece. Comienza hoy mismo y destaca en el mundo digital.
         </p>
 
-        <Link to="/contact" className="inline-block mt-8 bg-indigo-600 text-white hover:bg-indigo-700 transition-colorse py-4 px-8 rounded-lg text-lg font-semibold">
+        <Link 
+          to="/contact"
+          onClick={handleLinkClick}
+          className="inline-block mt-8 bg-indigo-600 text-white hover:bg-indigo-700 transition-colorse py-4 px-8 rounded-lg text-lg font-semibold"
+        >
           Comienza tu Proyecto
         </Link>
         

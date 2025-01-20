@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import ReactPixel from "react-facebook-pixel";
+
 import { Link } from 'react-router-dom';
 import { Send } from 'lucide-react';
 
@@ -21,6 +24,14 @@ export function SmallContact() {
         data[key] = value;
       }
     });
+
+    const getPageOrigin = (): string => {
+      const pathname = window.location.pathname;
+      if (pathname === '/') return 'Home';
+      if (pathname === '/about') return 'Sobre Nosotros';
+      if (pathname === '/blog') return 'Blog';
+      return 'Otra Página'; // Si no es ninguna de las anteriores
+    };
   
     try {
       // Hacer la solicitud POST a la ruta API
@@ -34,6 +45,11 @@ export function SmallContact() {
 
       // Manejar la respuesta
       if (response.ok) {
+        ReactPixel.track('Lead', {
+          form_name: "Mini Formulario",
+          page_origin: getPageOrigin()
+        });
+
         window.location.href = '/confirmation';
       } else {
         alert('Hubo un error al enviar el formulario');
