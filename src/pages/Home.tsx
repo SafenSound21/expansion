@@ -14,7 +14,7 @@ export function Home({ currentLang }: HomeProps) {
   return (
     <>
       <Hero currentLang={currentLang} />
-      <Features currentLang={currentLang} />
+      <Features />
       <StartNow />
       <Services currentLang={currentLang} />
       <Process />

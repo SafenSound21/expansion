@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { translations } from '../i18n/translations';
 import { SmallContact } from '../components/SmallContact';
