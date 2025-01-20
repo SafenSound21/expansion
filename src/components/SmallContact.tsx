@@ -63,6 +63,7 @@ export function SmallContact() {
             <input
               type="email"
               value={email}
+              id="email"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Tu email"
               required
@@ -76,6 +77,7 @@ export function SmallContact() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Tu mensaje"
+              id="message"
               required
               rows={4}
               className="relative w-full px-6 py-4 bg-slate-900/90 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -83,7 +85,7 @@ export function SmallContact() {
           </div>
 
           <div className="flex items-start gap-2">
-            
+
             <input
               type="checkbox"
               id="privacy"
