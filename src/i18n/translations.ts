@@ -10,7 +10,7 @@ export const translations = {
       plans: 'Planes'
     },
     hero: {
-      title: 'Diseñamos su página web para potenciar la visibilidad de tu negocio',
+      title: 'Diseñamos tu página web para potenciar la visibilidad de tu negocio',
       description: 'Especialistas en diseño web, desarrollo y SEO para impulsar tu presencia online',
       cta: 'Agendar una reunión'
     },
@@ -55,10 +55,6 @@ export const translations = {
           keywordsDesc: 'Investigación y optimización de palabras clave para mejorar tu ranking.'
         }
       }
-    },
-    footer: {
-      rights: '© 2024 Tu Agencia. Todos los derechos reservados.',
-      contact: 'Contacto'
     },
     confirmation: {
       message: '¡Gracias por contactarnos!',
