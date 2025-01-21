@@ -10,8 +10,8 @@ export const translations = {
       plans: 'Planes'
     },
     hero: {
-      title: 'Diseñamos tu página web para potenciar la visibilidad de tu negocio',
-      description: 'Especialistas en diseño web, desarrollo y SEO para impulsar tu presencia online',
+      title: 'Diseñamos, Desarrollamos, Mantenemos. Fácil',
+      description: 'Somos una agencia experta en crear páginas web rápidas, modernas y optimizadas para el éxito de tu negocio.',
       cta: 'Agendar una reunión'
     },
     services: {

@@ -35,7 +35,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-slate-900">
-        <Header currentLang={currentLang} onLanguageChange={setCurrentLang} />
+        <Header currentLang={currentLang} />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home currentLang={currentLang} />} />

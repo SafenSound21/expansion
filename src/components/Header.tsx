@@ -5,10 +5,10 @@ import image from "../assets/images/image.png";
 
 interface HeaderProps {
   currentLang: string;
-  onLanguageChange: (lang: string) => void;
+  // onLanguageChange: (lang: string) => void;
 }
 
-export function Header({ currentLang, onLanguageChange }: HeaderProps) {
+export function Header({ currentLang }: HeaderProps) {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const t = translations[currentLang as keyof typeof translations];
 
@@ -73,7 +73,7 @@ export function Header({ currentLang, onLanguageChange }: HeaderProps) {
         </div>
 
         <div className="hidden md:flex flex-1 items-center justify-end gap-4">
-          <select
+          {/* <select
             value={currentLang}
             onChange={(e) => onLanguageChange(e.target.value)}
             className="bg-transparent text-sm font-medium focus:outline-none cursor-pointer text-slate-300"
@@ -82,7 +82,7 @@ export function Header({ currentLang, onLanguageChange }: HeaderProps) {
             <option value="en">EN</option>
             <option value="fr">FR</option>
             <option value="de">DE</option>
-          </select>
+          </select> */}
 
           <Link to="/about" className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors">
             {t.nav.about}
