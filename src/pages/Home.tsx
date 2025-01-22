@@ -14,11 +14,11 @@ export function Home({ currentLang }: HomeProps) {
   return (
     <>
       <Hero currentLang={currentLang} />
-      <Features />
-      <StartNow />
-      <Services currentLang={currentLang} />
       <Process />
       <Faq />
+      <StartNow />
+      <Services currentLang={currentLang} />
+      <Features />
       <SmallContact />
     </>
   );
