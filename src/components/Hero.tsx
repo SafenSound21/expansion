@@ -27,7 +27,7 @@ export function Hero({ currentLang }: HeroProps) {
 
       <div className="relative z-10 pt-36 md:pt-52 pb-20 md:pb-32">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto gap-8">
+          <div className="flex flex-col text-center max-w-4xl mx-auto gap-8">
             <h1 className="text-5xl text-left md:text-6xl font-medium text-white leading-tight">
               Diseñamos, desarrollamos, mantenemos. Fácil
             </h1>
