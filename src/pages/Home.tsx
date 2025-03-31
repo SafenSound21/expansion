@@ -4,6 +4,7 @@ import { Benefits } from '../components/Benefits';
 import { Faq } from '../components/Faq';
 import { SmallContact } from '../components/SmallContact';
 
+
 interface HomeProps {
   currentLang: string;
 }

@@ -5,22 +5,22 @@ export function Benefits() {
   const benefits = [
     {
       icon: <Search className="w-8 h-8 sm:w-12 sm:h-12 text-indigo-400" />,
-      title: "Pierdes clientes a diario",
+      title: "Pérdida de clientes a diario",
       description: "El 97% de tus clientes potenciales buscan online antes de decidir."
     },
     {
       icon: <Shield className="w-8 h-8 sm:w-12 sm:h-12 text-indigo-400" />,
       title: "Falta de credibilidad",
-      description: "Sin una web profesional, pierdes la confianza del 75% de usuarios."
+      description: "El 75% de los usuarios confían más en un negocio con WEB."
     },
     {
       icon: <Trophy className="w-8 h-8 sm:w-12 sm:h-12 text-indigo-400" />,
-      title: "Ventaja para tu competencia",
-      description: "El 35% de pymes en Costa Rica tienen presencia web. ¿Quieres ser de los que lideran o los que quedan atrás?"
+      title: "Supera a tu competencia",
+      description: "Si tu competencia tiene web y tú no, tendrá más visibilidad y por tanto, vende más."
     },
     {
       icon: <FileSpreadsheet className="w-8 h-8 sm:w-12 sm:h-12 text-indigo-400" />,
-      title: "Pocos contactos (leads)",
+      title: "Pérdida de oportunidades",
       description: "Tu página web podría captar interesados 24/7. Sin ella, pierdes oportunidades."
     },
     {
@@ -47,7 +47,7 @@ export function Benefits() {
             ¿Tu negocio aún no tiene web?
           </h2>
           <p className="text-lg sm:text-xl text-indigo-200 max-w-3xl mx-auto">
-            Esto estás perdiendo:
+            Esto te estás perdiendo:
           </p>
         </div>
 
@@ -135,7 +135,7 @@ export function Benefits() {
             to="/contact"
             className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
           >
-            Vende Más
+            AUMENTA TUS VENTAS
           </Link>
         </div>
       </div>
