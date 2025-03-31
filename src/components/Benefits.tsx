@@ -47,7 +47,7 @@ export function Benefits() {
             ¿Tu negocio aún no tiene web?
           </h2>
           <p className="text-lg sm:text-xl text-indigo-200 max-w-3xl mx-auto">
-            Esto te estás perdiendo:
+            Esta es tu situación actual:
           </p>
         </div>
 
