@@ -29,7 +29,7 @@ export function Hero({ currentLang }: HeroProps) {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col text-center max-w-4xl mx-auto gap-8">
             <h1 className="text-5xl text-left md:text-6xl font-medium text-white leading-tight">
-              Diseñamos, desarrollamos, mantenemos. Fácil
+              Diseñamos, desarrollamos, mantenemos. Fácil.
             </h1>
             <p className="text-lg text-justify text-slate-100 leading-relaxed max-w-3xl mb-2">
               {t.hero.description}

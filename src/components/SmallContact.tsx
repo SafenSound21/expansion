@@ -89,6 +89,18 @@ export function SmallContact() {
 
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg opacity-30 group-hover:opacity-100 transition duration-500"></div>
+            <input
+              type="número"
+              id="número"
+              name="número"
+              placeholder="Número de teléfono"
+              required
+              className="relative w-full px-6 py-4 bg-slate-900/90 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg opacity-30 group-hover:opacity-100 transition duration-500"></div>
             <textarea
               name="message"
               placeholder="Tu mensaje"

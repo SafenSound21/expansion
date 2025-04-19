@@ -87,6 +87,18 @@ export function Contact({ currentLang }: ContactProps) {
               type="text"
               id="name"
               name="name"
+              placeholder="Tu nombre"
+              required
+              className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label htmlFor="phone" className="block text-white mb-2">Teléfono *</label>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Número de teléfono"
+              id="phone"
               required
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
@@ -97,25 +109,8 @@ export function Contact({ currentLang }: ContactProps) {
               type="email"
               id="email"
               name="email"
+              placeholder="Tu email"
               required
-              className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-            />
-          </div>
-          <div>
-            <label htmlFor="business" className="block text-white mb-2">Nombre del negocio (opcional)</label>
-            <input
-              type="text"
-              name="business"
-              id="business"
-              className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-            />
-          </div>
-          <div>
-            <label htmlFor="phone" className="block text-white mb-2">Teléfono (opcional)</label>
-            <input
-              type="tel"
-              name="phone"
-              id="phone"
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
           </div>
@@ -124,6 +119,7 @@ export function Contact({ currentLang }: ContactProps) {
             <textarea
               id="message"
               name="message"
+              placeholder="Cuéntanos sobre tu negocio (nombre, por qué necesitáis web...)"
               required
               rows={5}
               className="w-full px-4 py-2 bg-white/10 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
