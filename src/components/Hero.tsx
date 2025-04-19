@@ -25,7 +25,7 @@ export function Hero({ currentLang }: HeroProps) {
       {/* Gradiente superpuesto */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 opacity-50 h-full"></div>
 
-      <div className="relative z-10 pt-[176px] md:pt-[240px] pb-[112px] md:pb-[160px]">
+      <div className="relative z-10 pt-[120px] md:pt-[240px] pb-[112px] md:pb-[160px]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col text-center max-w-4xl mx-auto gap-8">
             <h1 className="text-5xl text-left md:text-6xl font-medium text-white leading-tight">
