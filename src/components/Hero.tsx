@@ -20,12 +20,12 @@ export function Hero({ currentLang }: HeroProps) {
   return (
     <section className="relative w-full">
       {/* Imagen de fondo */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80 bg-hero-image h-full"></div>
+      <div className="absolute inset-0 bg-cover bg-[center_top] sm:bg-center bg-no-repeat opacity-80 bg-hero-image h-full"></div>
 
       {/* Gradiente superpuesto */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 opacity-50 h-full"></div>
 
-      <div className="relative z-10 pt-36 md:pt-52 pb-20 md:pb-32">
+      <div className="relative z-10 pt-[176px] md:pt-[240px] pb-[112px] md:pb-[160px]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col text-center max-w-4xl mx-auto gap-8">
             <h1 className="text-5xl text-left md:text-6xl font-medium text-white leading-tight">

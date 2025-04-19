@@ -4,8 +4,29 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-image': "url('https://images.unsplash.com/photo-1681225692736-da34da4c610c?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-      }
+        'hero-image': "url('/fondo.png')",
+      },
+      
+      
+      animation: {
+        scroll: 'scroll 30s linear infinite',
+        scroll2: 'scroll2 30s linear infinite',
+        'infinite-scroll': 'infinite-scroll 15s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        scroll2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+        'infinite-scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
   plugins: [],

@@ -13,23 +13,20 @@ import { Terms } from './pages/legal/Terms';
 import { Legal } from './pages/legal/Legal';
 import { WebDesign } from './pages/services/WebDesign';
 import { WebDevelopment } from './pages/services/WebDevelopment';
+import { Companies } from './components/Companies';
 import { SEO } from './pages/services/SEO';
 import { Confirmation } from "./pages/Confirmation";
 import { WhatsappButton } from "./components/WhatsappButton";
-import initFacebookPixel from './tracking/Facebook';
 import TagManager from 'react-gtm-module';
 import ScrollToTop from './components/ScrollToTop';
-
 import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [currentLang, setCurrentLang] = useState('es');
 
   useEffect(() => {
-    const pixelId = import.meta.env.VITE_PIXEL_ID || "";
     const gtmId = import.meta.env.VITE_GTM_ID || "";
-    initFacebookPixel(pixelId);
-    TagManager.initialize({ gtmId: gtmId });
+    TagManager.initialize({ gtmId });
   }, []);
 
   return (

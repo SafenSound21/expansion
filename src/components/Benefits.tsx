@@ -126,7 +126,7 @@ export function Benefits() {
         {/* Sección final con título, subtítulo y botón */}
         <div className="mt-16 sm:mt-24 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-200">
-            ¿Listo para aumentar tus ventas?
+            ¿Listo para vender más?
           </h2>
           <p className="text-lg text-indigo-200 max-w-2xl mx-auto mb-8">
             No esperes más para tener la página web que tu negocio merece. Comienza hoy mismo y destaca en el mundo digital.

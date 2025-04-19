@@ -11,7 +11,7 @@ export const translations = {
     },
     hero: {
       title: 'Diseñamos, Desarrollamos, Mantenemos. Fácil',
-      description: 'Somos una agencia experta en crear páginas web rápidas, modernas y optimizadas para el éxito de tu negocio.',
+      description: 'Páginas web con los mejores resultados del mercado. Webs que que convierten, que venden. Solicita la tuya.',
       cta: 'Agendar una reunión'
     },
     services: {
