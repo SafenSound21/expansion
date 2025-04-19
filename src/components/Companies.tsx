@@ -39,7 +39,7 @@ export function Companies() {
     );
 
     return (
-        <div className="-mt-10 sm:mt-0 relative z-10">
+        <div className="-mt-16 sm:mt-0 relative z-10">
             <div className="bg-white w-screen sm:w-full py-4 sm:py-6 relative overflow-hidden">
                 <div className="absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-white to-transparent z-10" />
                 <div className="absolute inset-y-0 right-0 w-12 sm:w-20 bg-gradient-to-l from-white to-transparent z-10" />
