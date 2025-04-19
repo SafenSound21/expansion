@@ -14,12 +14,21 @@ export function Companies() {
     const renderLogo = (company: any, index: number, isClone = false) => (
         <div
             key={`${company.name}-${index}${isClone ? '-duplicate' : ''}`}
-            className="flex items-center justify-center min-w-[80px] sm:min-w-[140px] shrink-0 px-6"
+            className="flex items-center justify-center min-w-[80px] sm:min-w-[140px] shrink-0 px-4 sm:px-6"
         >
             {company.isTitle ? (
-                <span className="text-center text-lg sm:text-2xl font-bold text-slate-800 whitespace-nowrap">
-                    La misma tecnología que usan ellos
-                </span>
+                <>
+                    {/* Texto para móvil */}
+                    <span className="block sm:hidden text-center text-base font-bold text-slate-800 whitespace-nowrap min-w-[220px]">
+                        Tecnología como la nuestra
+                    </span>
+
+                    {/* Texto para escritorio */}
+                    <span className="hidden sm:block text-center text-2xl font-bold text-slate-800 whitespace-nowrap min-w-[300px]">
+                        La misma tecnología que usan ellos
+                    </span>
+                </>
+
             ) : (
                 <img
                     src={company.logo}
@@ -31,20 +40,20 @@ export function Companies() {
     );
 
     return (
-        <div className="mt-0 sm:mt-0 relative z-10">
-            <div className="bg-white py-4 sm:py-6 relative overflow-hidden">
+        <div className="-mt-4 sm:mt-0 relative z-10">
+            <div className="bg-white w-screen sm:w-full py-4 sm:py-6 relative overflow-hidden">
                 <div className="absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-white to-transparent z-10" />
                 <div className="absolute inset-y-0 right-0 w-12 sm:w-20 bg-gradient-to-l from-white to-transparent z-10" />
 
                 <div className="relative flex overflow-x-hidden">
-                    <div className="w-[200%] flex space-x-8 sm:space-x-20 animate-infinite-scroll">
+                    <div className="w-[200%] flex space-x-8 sm:space-x-20 animate-infinite-scroll-mobile sm:animate-infinite-scroll">
                         {[...companies, ...companies].map((company, index) =>
                             renderLogo(company, index)
                         )}
                     </div>
 
                     <div
-                        className="w-[200%] flex space-x-8 sm:space-x-20 animate-infinite-scroll"
+                        className="w-[200%] flex space-x-8 sm:space-x-20 animate-infinite-scroll-mobile sm:animate-infinite-scroll"
                         aria-hidden="true"
                     >
                         {[...companies, ...companies].map((company, index) =>
