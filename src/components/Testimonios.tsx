@@ -22,7 +22,7 @@ export function Testimonios() {
         {
             name: "TutorLink",
             image: "/TutorLink.png",
-            website: "www.TutorLink.es",
+            website: "www.tutorlink.es",
             description: [
                 "Objetivo: Expandir alcance y mejorar presencia digital.",
                 "Estrategia: Marketing digital integral y optimización web.",
