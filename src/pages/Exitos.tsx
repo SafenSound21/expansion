@@ -1,6 +1,6 @@
 import React from 'react';
 import { Testimonios } from '../components/Testimonios';
-import { Companies2 } from '../components/Companies2';
+import { Companies } from '../components/Companies';
 import { SmallContact } from '../components/SmallContact';
 
 export function Exitos() {
@@ -16,7 +16,7 @@ export function Exitos() {
 
             {/* Scroll de empresas */}
             <div className="mt-12">
-                <Companies2 />
+                <Companies />
             </div>
 
             {/* Formulario pegado al scroll y al footer */}
