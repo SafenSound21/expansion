@@ -5,7 +5,7 @@ import { SmallContact } from '../components/SmallContact';
 
 export function Exitos() {
     return (
-        <div className="bg-slate-900 min-h-screen py-16 sm:py-24">
+        <div className="bg-slate-900 min-h-screen pt-24 sm:pt-32">
             {/* Contenido principal con título y testimonios */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h1 className="text-4xl sm:text-5xl font-bold text-center text-white mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-200">
@@ -14,11 +14,13 @@ export function Exitos() {
                 <Testimonios />
             </div>
 
-            <div className="mt-16">
+            {/* Scroll de empresas */}
+            <div className="mt-12">
                 <Companies2 />
             </div>
 
-            <div className="mt-16">
+            {/* Formulario pegado al scroll y al footer */}
+            <div className="-mt-8 mb-[-70px]">
                 <SmallContact />
             </div>
         </div>
