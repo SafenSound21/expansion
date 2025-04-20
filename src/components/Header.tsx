@@ -1,15 +1,20 @@
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { translations } from '../i18n/translations';
 import image from "../assets/images/image.png";
 
+
 interface HeaderProps {
   currentLang: string;
+
 }
 
 export function Header({ currentLang }: HeaderProps) {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const t = translations[currentLang as keyof typeof translations];
+  const [hovering, setHovering] = useState(false);
+  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+
 
   const onClickHandler = () => {
     if (menuRef.current) {
@@ -34,17 +39,32 @@ export function Header({ currentLang }: HeaderProps) {
             Contacto
           </Link>
 
-          <div className="relative group">
+          <div
+            className="relative"
+            onMouseEnter={() => {
+              if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+              setHovering(true);
+            }}
+            onMouseLeave={() => {
+              hoverTimeout.current = setTimeout(() => {
+                setHovering(false);
+              }, 100);
+            }}
+          >
             <button className="text-white px-4 py-2 rounded-lg hover:text-indigo-400 transition-colors flex items-center">
-              &#9776;
+              ☰
             </button>
-            <div className="absolute right-0 mt-2 w-40 bg-slate-700 rounded-lg shadow-lg hidden group-hover:block z-50">
-              <Link to="/exitos" className="block px-4 py-2 text-white hover:bg-slate-600">Éxito</Link>
-              <Link to="/contact" className="block px-4 py-2 text-white hover:bg-slate-600">Contacto</Link>
-              <Link to="/about" className="block px-4 py-2 text-white hover:bg-slate-600">Sobre nosotros</Link>
-              <Link to="/blog" className="block px-4 py-2 text-white hover:bg-slate-600">Blog</Link>
-            </div>
+
+            {hovering && (
+              <div className="absolute right-0 mt-2 w-40 bg-slate-700 rounded-lg shadow-lg z-50 transition-opacity duration-300">
+                <Link to="/exitos" className="block px-4 py-2 text-white hover:bg-slate-600">Casos de éxito</Link>
+                <Link to="/contact" className="block px-4 py-2 text-white hover:bg-slate-600">Contacto</Link>
+                <Link to="/about" className="block px-4 py-2 text-white hover:bg-slate-600">Sobre nosotros</Link>
+                <Link to="/blog" className="block px-4 py-2 text-white hover:bg-slate-600">Blog</Link>
+              </div>
+            )}
           </div>
+
         </div>
 
         <div className="md:hidden">
