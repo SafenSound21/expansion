@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Contact } from './pages/Contact';
 import { Plans } from './pages/Plans';
+import { Exitos } from './pages/Exitos';
 import { About } from './pages/About';
 import { Blog } from './pages/Blog';
 import { PrivacyPolicy } from './pages/legal/PrivacyPolicy';
@@ -14,6 +15,7 @@ import { Legal } from './pages/legal/Legal';
 import { WebDesign } from './pages/services/WebDesign';
 import { WebDevelopment } from './pages/services/WebDevelopment';
 import { Companies } from './components/Companies';
+import { Testimonios } from './components/Testimonios';
 import { SEO } from './pages/services/SEO';
 import { Confirmation } from "./pages/Confirmation";
 import { WhatsappButton } from "./components/WhatsappButton";
@@ -48,6 +50,8 @@ function App() {
           <Route path="/services/web-design" element={<WebDesign currentLang={currentLang} />} />
           <Route path="/services/web-development" element={<WebDevelopment currentLang={currentLang} />} />
           <Route path="/services/seo" element={<SEO currentLang={currentLang} />} />
+          <Route path="/exitos" element={<Exitos />} />
+
         </Routes>
         <Footer currentLang={currentLang} onLanguageChange={setCurrentLang} />
         <WhatsappButton />
